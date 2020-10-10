@@ -24,7 +24,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TIPO_EJERCICIO")
 @NamedQueries({
-    @NamedQuery(name = "TipoEjercicio.findAll", query = "SELECT t FROM TipoEjercicio t")})
+    @NamedQuery(name = "TipoEjercicio.findAll", query = "SELECT t FROM TipoEjercicio t")
+})
 public class TipoEjercicio implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -38,8 +39,9 @@ public class TipoEjercicio implements Serializable {
     public TipoEjercicio() {
     }
 
-    public TipoEjercicio(Integer idTipoEjercicio) {
+    public TipoEjercicio(Integer idTipoEjercicio, String dscTipoEjercicio) {
         this.idTipoEjercicio = idTipoEjercicio;
+        this.dscTipoEjercicio = dscTipoEjercicio;
     }
 
     public Integer getIdTipoEjercicio() {

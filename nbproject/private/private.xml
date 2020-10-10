@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/dao/impl/TipoEjercicioDao.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/model/Rutina.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/RutinasDeportivas.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/dao/impl/GrupoDeportivoDao.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/model/ParteCuerpo.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/model/Especialista.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/util/RutinasDeportivasHibernateUtil.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/dao/impl/EspecialistaDao.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/dao/GenericDao.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/model/Registro.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/model/Ejercicio.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/model/TipoEjercicio.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/dao/impl/EjercicioDao.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/model/RutinaPK.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/dao/impl/ParteCuerpoDao.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/dao/impl/RegistroDao.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/model/GrupoDeportivo.java</file>
+            <file>file:/C:/Users/carlo/OneDrive/Documents/NetBeansProjects/RutinasDeportivas/src/com/uptc/figueredo/rutinasdeportivas/dao/impl/RutinaDao.java</file>
+        </group>
+    </open-files>
+</project-private>

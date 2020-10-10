@@ -7,12 +7,12 @@
     <property name="hibernate.connection.url">jdbc:derby://localhost:1527/RutinasDeportivas</property>
     <property name="hibernate.connection.username">carlos</property>
     <property name="hibernate.connection.password">1234</property>
+    <mapping class="com.uptc.figueredo.rutinasdeportivas.model.TipoEjercicio"></mapping>
     <mapping class="com.uptc.figueredo.rutinasdeportivas.model.GrupoDeportivo"></mapping>
     <mapping class="com.uptc.figueredo.rutinasdeportivas.model.Especialista"></mapping>
     <mapping class="com.uptc.figueredo.rutinasdeportivas.model.Registro"></mapping>
     <mapping class="com.uptc.figueredo.rutinasdeportivas.model.ParteCuerpo"></mapping>
     <mapping class="com.uptc.figueredo.rutinasdeportivas.model.Rutina"></mapping>
     <mapping class="com.uptc.figueredo.rutinasdeportivas.model.Ejercicio"></mapping>
-    <mapping class="com.uptc.figueredo.rutinasdeportivas.model.TipoEjercicio"></mapping>
   </session-factory>
 </hibernate-configuration>
