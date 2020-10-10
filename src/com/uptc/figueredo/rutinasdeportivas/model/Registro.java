@@ -7,11 +7,13 @@ package com.uptc.figueredo.rutinasdeportivas.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
@@ -33,14 +35,17 @@ public class Registro implements Serializable {
     @Column(name = "FECHA_REGISTRO")
     private Date fechaRegistro;
     @JoinColumn(name = "ID_REGISTRO", referencedColumnName = "ID_ESPECIALISTA", insertable = false, updatable = false)
-    @OneToOne(optional = false, fetch = FetchType.EAGER)
+    @OneToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @MapsId
     private Especialista especialista;
 
     public Registro() {
     }
 
-    public Registro(Integer idRegistro) {
-        this.idRegistro = idRegistro;
+    public Registro(Date fechaRegistro, Especialista especialista) {
+        this.idRegistro = especialista.getIdEspecialista();
+        this.fechaRegistro = fechaRegistro;
+        this.especialista = especialista;
     }
 
     public Integer getIdRegistro() {

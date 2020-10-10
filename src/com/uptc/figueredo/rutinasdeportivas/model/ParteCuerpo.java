@@ -6,7 +6,9 @@
 package com.uptc.figueredo.rutinasdeportivas.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -34,10 +36,10 @@ public class ParteCuerpo implements Serializable {
     private Integer idMusculo;
     @Column(name = "DSC_MUSCULO")
     private String dscMusculo;
-    @ManyToMany(mappedBy = "parteCuerpoSet", fetch = FetchType.EAGER)
-    private Set<Ejercicio> ejercicioSet;
+    @ManyToMany(mappedBy = "parteCuerpoSet", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Ejercicio> ejercicioSet = new HashSet(0);;
     @OneToMany(mappedBy = "parIdMusculo", fetch = FetchType.EAGER)
-    private Set<ParteCuerpo> parteCuerpoSet;
+    private Set<ParteCuerpo> parteCuerpoSet = new HashSet(0);;
     @JoinColumn(name = "PAR_ID_MUSCULO", referencedColumnName = "ID_MUSCULO")
     @ManyToOne(fetch = FetchType.LAZY)
     private ParteCuerpo parIdMusculo;

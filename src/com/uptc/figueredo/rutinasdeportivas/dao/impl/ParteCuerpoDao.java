@@ -6,6 +6,7 @@
 package com.uptc.figueredo.rutinasdeportivas.dao.impl;
 
 import com.uptc.figueredo.rutinasdeportivas.dao.GenericDao;
+import com.uptc.figueredo.rutinasdeportivas.model.Ejercicio;
 import com.uptc.figueredo.rutinasdeportivas.model.ParteCuerpo;
 
 /**
@@ -14,4 +15,7 @@ import com.uptc.figueredo.rutinasdeportivas.model.ParteCuerpo;
  */
 public class ParteCuerpoDao extends GenericDao<ParteCuerpo, Integer>{
     
+     public Integer nextId() throws Exception{
+        return maxValueInteger(ParteCuerpo.class, "idMusculo") +1;
+    }
 }

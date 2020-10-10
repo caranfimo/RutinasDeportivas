@@ -7,6 +7,7 @@
     <property name="hibernate.connection.url">jdbc:derby://localhost:1527/RutinasDeportivas</property>
     <property name="hibernate.connection.username">carlos</property>
     <property name="hibernate.connection.password">1234</property>
+    <property name="hibernate.show_sql">true</property>
     <mapping class="com.uptc.figueredo.rutinasdeportivas.model.GrupoDeportivo"></mapping>
     <mapping class="com.uptc.figueredo.rutinasdeportivas.model.Especialista"></mapping>
     <mapping class="com.uptc.figueredo.rutinasdeportivas.model.Registro"></mapping>

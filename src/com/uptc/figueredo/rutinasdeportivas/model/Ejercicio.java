@@ -6,6 +6,7 @@
 package com.uptc.figueredo.rutinasdeportivas.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -41,19 +42,28 @@ public class Ejercicio implements Serializable {
     @JoinTable(name = "MUSCULO_EJERCICIO", joinColumns = {
         @JoinColumn(name = "ID_EJERCICIO", referencedColumnName = "ID_EJERCICIO")}, inverseJoinColumns = {
         @JoinColumn(name = "ID_MUSCULO", referencedColumnName = "ID_MUSCULO")})
-    @ManyToMany(fetch = FetchType.EAGER)
-    private Set<ParteCuerpo> parteCuerpoSet;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<ParteCuerpo> parteCuerpoSet = new HashSet(0);
     @JoinColumn(name = "ID_TIPO_EJERCICIO", referencedColumnName = "ID_TIPO_EJERCICIO")
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     private TipoEjercicio idTipoEjercicio;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "ejercicio", fetch = FetchType.EAGER)
-    private Set<Rutina> rutinaSet;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "ejercicio", fetch = FetchType.LAZY)
+    private Set<Rutina> rutinaSet = new HashSet(0);
 
     public Ejercicio() {
     }
 
-    public Ejercicio(Integer idEjercicio) {
+    public Ejercicio(Integer idEjercicio, String nombreEjercicio, String dscEjercicio) {
         this.idEjercicio = idEjercicio;
+        this.nombreEjercicio = nombreEjercicio;
+        this.dscEjercicio = dscEjercicio;
+    }
+    
+    public Ejercicio(Integer idEjercicio, String nombreEjercicio, String dscEjercicio, Set<ParteCuerpo> parteCuerpoSet) {
+        this.idEjercicio = idEjercicio;
+        this.nombreEjercicio = nombreEjercicio;
+        this.dscEjercicio = dscEjercicio;
+        this.parteCuerpoSet = parteCuerpoSet;
     }
 
     public Integer getIdEjercicio() {

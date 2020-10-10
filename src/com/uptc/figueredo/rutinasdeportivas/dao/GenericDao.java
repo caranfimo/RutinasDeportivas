@@ -8,6 +8,7 @@ package com.uptc.figueredo.rutinasdeportivas.dao;
 import com.uptc.figueredo.rutinasdeportivas.util.RutinasDeportivasHibernateUtil;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Optional;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -47,6 +48,23 @@ public abstract class GenericDao<T, D> {
         } catch (Exception ex) {
             throw ex;
         } finally {
+            session.close();
+        }
+    }
+    
+    public Integer maxValueInteger(Class classObject, String namePrimaryKey) throws Exception{
+        try {
+            initTransaction();
+        Integer maxValue = (Integer) Optional.ofNullable(session
+                .createQuery("SELECT MAX("+ namePrimaryKey +") FROM " + classObject.getSimpleName()))
+                .map(query -> query.uniqueResult())
+                .orElse(0);
+        return Optional.of(maxValue).orElse(0);
+        }
+        catch(Exception ex) {
+            throw ex;
+        }
+        finally {
             session.close();
         }
     }

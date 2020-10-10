@@ -33,10 +33,10 @@ public class GrupoDeportivo implements Serializable {
     private int intento;
     @JoinColumn(name = "ESP_ID_ESPECIALISTA", referencedColumnName = "ID_ESPECIALISTA")
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
-    private Especialista espIdEspecialista;
+    private Especialista relacionEspecialista;
     @JoinColumn(name = "ID_ESPECIALISTA", referencedColumnName = "ID_ESPECIALISTA")
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
-    private Especialista idEspecialista;
+    private Especialista relacionAmigo;
 
     public GrupoDeportivo() {
     }
@@ -66,22 +66,22 @@ public class GrupoDeportivo implements Serializable {
         this.intento = intento;
     }
 
-    public Especialista getEspIdEspecialista() {
-        return espIdEspecialista;
+    public Especialista getRelacionEspecialista() {
+        return relacionEspecialista;
     }
 
-    public void setEspIdEspecialista(Especialista espIdEspecialista) {
-        this.espIdEspecialista = espIdEspecialista;
+    public void setRelacionEspecialista(Especialista relacionEspecialista) {
+        this.relacionEspecialista = relacionEspecialista;
     }
 
-    public Especialista getIdEspecialista() {
-        return idEspecialista;
+    public Especialista getRelacionAmigo() {
+        return relacionAmigo;
     }
 
-    public void setIdEspecialista(Especialista idEspecialista) {
-        this.idEspecialista = idEspecialista;
+    public void setRelacionAmigo(Especialista relacionAmigo) {
+        this.relacionAmigo = relacionAmigo;
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 0;

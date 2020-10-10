@@ -7,6 +7,7 @@ package com.uptc.figueredo.rutinasdeportivas.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -37,16 +38,16 @@ public class Especialista implements Serializable {
     private String nombre;
     @Column(name = "FECHA_NACIMIENTO")
     private Date fechaNacimiento;
-    @Basic(optional = false)
+    @Column(name = "TARJETA_PROFESIONAL")
     private String tarjetaProfesional;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "especialista", fetch = FetchType.EAGER)
     private Registro registro;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "espIdEspecialista", fetch = FetchType.EAGER)
-    private Set<GrupoDeportivo> grupoDeportivoSet;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idEspecialista", fetch = FetchType.EAGER)
-    private Set<GrupoDeportivo> grupoDeportivoSet1;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "relacionAmigo", fetch = FetchType.EAGER)
+    private Set<GrupoDeportivo> grupoDeportivoAmigos = new HashSet<>(0);
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "relacionEspecialista", fetch = FetchType.EAGER)
+    private Set<GrupoDeportivo> grupoDeportivoEspecialistas = new HashSet<>(0);
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "especialista", fetch = FetchType.EAGER)
-    private Set<Rutina> rutinaSet;
+    private Set<Rutina> rutinaSet = new HashSet<>(0);
 
     public Especialista() {
     }
@@ -102,20 +103,20 @@ public class Especialista implements Serializable {
         this.registro = registro;
     }
 
-    public Set<GrupoDeportivo> getGrupoDeportivoSet() {
-        return grupoDeportivoSet;
+    public Set<GrupoDeportivo> getGrupoDeportivoAmigos() {
+        return grupoDeportivoAmigos;
     }
 
-    public void setGrupoDeportivoSet(Set<GrupoDeportivo> grupoDeportivoSet) {
-        this.grupoDeportivoSet = grupoDeportivoSet;
+    public void setGrupoDeportivoAmigos(Set<GrupoDeportivo> grupoDeportivoAmigos) {
+        this.grupoDeportivoAmigos = grupoDeportivoAmigos;
     }
 
-    public Set<GrupoDeportivo> getGrupoDeportivoSet1() {
-        return grupoDeportivoSet1;
+    public Set<GrupoDeportivo> getGrupoDeportivoEspecialistas() {
+        return grupoDeportivoEspecialistas;
     }
 
-    public void setGrupoDeportivoSet1(Set<GrupoDeportivo> grupoDeportivoSet1) {
-        this.grupoDeportivoSet1 = grupoDeportivoSet1;
+    public void setGrupoDeportivoEspecialistas(Set<GrupoDeportivo> grupoDeportivoEspecialistas) {
+        this.grupoDeportivoEspecialistas = grupoDeportivoEspecialistas;
     }
 
     public Set<Rutina> getRutinaSet() {

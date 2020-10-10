@@ -14,4 +14,8 @@ import com.uptc.figueredo.rutinasdeportivas.model.GrupoDeportivo;
  */
 public class GrupoDeportivoDao extends GenericDao<GrupoDeportivo, Integer>{
     
+    public Integer nextId() throws Exception{
+        return maxValueInteger(GrupoDeportivo.class, "cscIntentos") +1;
+    }
+    
 }

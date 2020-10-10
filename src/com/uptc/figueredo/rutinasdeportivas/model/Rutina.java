@@ -32,7 +32,7 @@ public class Rutina implements Serializable {
     @EmbeddedId
     protected RutinaPK rutinaPK;
     @Column(name = "REPETICIONES")
-    private short repeticiones;
+    private Integer repeticiones;
     @Column(name = "DURACION")
     @Temporal(TemporalType.TIME)
     private Date duracion;
@@ -50,7 +50,7 @@ public class Rutina implements Serializable {
         this.rutinaPK = rutinaPK;
     }
 
-    public Rutina(RutinaPK rutinaPK, short repeticiones, Date duracion) {
+    public Rutina(RutinaPK rutinaPK, Integer repeticiones, Date duracion) {
         this.rutinaPK = rutinaPK;
         this.repeticiones = repeticiones;
         this.duracion = duracion;
@@ -68,11 +68,11 @@ public class Rutina implements Serializable {
         this.rutinaPK = rutinaPK;
     }
 
-    public short getRepeticiones() {
+    public Integer getRepeticiones() {
         return repeticiones;
     }
 
-    public void setRepeticiones(short repeticiones) {
+    public void setRepeticiones(Integer repeticiones) {
         this.repeticiones = repeticiones;
     }
 
