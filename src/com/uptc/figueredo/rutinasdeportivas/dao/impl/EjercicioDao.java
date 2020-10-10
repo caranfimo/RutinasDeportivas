@@ -40,27 +40,4 @@ public class EjercicioDao extends GenericDao<Ejercicio, Integer> {
         return partesCuerpo;
 
     }
-    
-    public List<DetalleRutinaDto> getDetallesRutina() throws Exception{
-        initTransaction();
-        List<DetalleRutinaDto> detallesRutina ;
-        try {
-            detallesRutina = ((List<Ejercicio>) session.createQuery("from Ejercicio").list())
-                    .parallelStream()
-                    .map(query ->{
-                        List<String> descPartesCuerpo = query.getParteCuerpoSet()
-                                .stream()
-                                .map(ParteCuerpo::getDscMusculo)
-                                .collect(Collectors.toList());
-                        
-                       return new DetalleRutinaDto(query.getNombreEjercicio(), descPartesCuerpo);
-                    })
-                    .collect(Collectors.toList());
-            return detallesRutina;
-        } catch (Exception ex) {
-            throw ex;
-        } finally {
-            session.close();
-        }
-    }
 }

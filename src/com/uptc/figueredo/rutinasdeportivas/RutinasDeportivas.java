@@ -12,6 +12,7 @@ import com.uptc.figueredo.rutinasdeportivas.dao.impl.ParteCuerpoDao;
 import com.uptc.figueredo.rutinasdeportivas.dao.impl.RegistroDao;
 import com.uptc.figueredo.rutinasdeportivas.dao.impl.RutinaDao;
 import com.uptc.figueredo.rutinasdeportivas.dao.impl.TipoEjercicioDao;
+import com.uptc.figueredo.rutinasdeportivas.dto.DetalleRutinaDto;
 import com.uptc.figueredo.rutinasdeportivas.model.Ejercicio;
 import com.uptc.figueredo.rutinasdeportivas.model.Especialista;
 import com.uptc.figueredo.rutinasdeportivas.model.GrupoDeportivo;
@@ -41,7 +42,7 @@ public class RutinasDeportivas {
         RutinaDao rutinaDao = new RutinaDao();
         RegistroDao registroDao = new RegistroDao();
         GrupoDeportivoDao grupoDeportivoDao = new GrupoDeportivoDao();
-        
+//        
         try {
             // Registrar tipo ejercicio
             TipoEjercicio tipoEjercicio = new TipoEjercicio(tipoEjercicioDao.nextId(), "Rutina Diaria");
@@ -106,21 +107,15 @@ public class RutinasDeportivas {
                     .getGrupoDeportivoEspecialistas().add(grupoDeportivo);
             grupoDeportivo.setRelacionEspecialista(especialista);
             grupoDeportivoDao.save(grupoDeportivo);
+            System.out.println("grupoDeportivo "+ grupoDeportivo.getCscIntentos().toString() + " registrado correctamente");
             
-            // Informacion detallada de las rutinas
-//            System.out.println("Informacion detallada de las rutinas");
-//            ejercicioDao.getDetallesRutina()
-//                    .stream()
-//                    .map(DetalleRutinaDto::toString)
-//                    .forEach(System.out::println);
+            //Informacion detallada de las rutinas
+            System.out.println("Informacion detallada de las rutinas");
+            rutinaDao.getDetallesRutina()
+                    .stream()
+                    .map(DetalleRutinaDto::toString)
+                    .forEach(System.out::println);
         
-        } catch (Exception ex) {
-            System.err.println(ex.getMessage());
-        }
-        
-        
-        try {
-            
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }
